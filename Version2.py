@@ -25,13 +25,9 @@ target.write("How large were the reports in GB? \n")
 x6 = raw_input("How large were the reports in GB?: ")
 target.write(x6 + "\n")
 
-#This is where the magic happens
-def vendor_costs(consulting_hours, analysis_hours, consulting_rate, analysis_rate, acquisition_rate):
-	return (consulting_hours*consulting_rate) + (analysis_hours*analysis_rate) + (acquisition_rate)
-
-companies = {'EY': {'consulting_rate': 400, 'analysis_rate': 300, 'acquisition_rate': 500}, 
-'Newberry': {'consulting_rate': 295, 'analysis_rate': 295}, 
-'Kroll': {'consulting_rate': 190, 'analysis_rate': 295}}
+companies = {'CompanyA': {'consulting_rate': 400, 'analysis_rate': 300, 'acquisition_rate': 500}, 
+'CompanyB': {'consulting_rate': 295, 'analysis_rate': 295, 'acquisition_rate': 0}, 
+'CompanyC': {'consulting_rate': 190, 'analysis_rate': 295, 'acquisition_rate': 0}}
 
 for company, information in companies.items():
 	estimated_cost = vendor_costs(consulting_hours, analysis_hours, information['consulting_rate'], information['analysis_rate'], information['acquisition_rate'])
